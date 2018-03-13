@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body ng-app="MockApp">
+
+<nav class="navbar navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" ui-sref="student">Student</a>
+      <a class="nav-item nav-link" ui-sref="teacher">Teachers</a>
+      <a class="nav-item nav-link" ui-sref="register">Register</a>
+    </div>
+  </div>
+</nav>
+
+  <ui-view></ui-view>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <script src="components/directives/address.js"></script>
+  <script src="components/directives/format-phone.js"></script>
+  <script src="components/directives/teacher-modal.js"></script>
+  <script src="components/directives/scroll-to-bookmark.js"></script>
+
+  <script src="components/register/register.controller.js"></script>
+
+  <script src="components/student/student.controller.js"></script>
+  <script src="components/student/student.service.js"></script>
+  <script src="components/modalComponent/student/studentModal.controller.js"></script>
+  <script src="components/modalComponent/student/deleteModal.controller.js"></script>
+
+  <script src="components/teacher/teacher.controller.js"></script>
+  <script src="components/teacher/teacher.service.js"></script>
+  <script src="components/modalComponent/teacher/teacherModal.controller.js"></script>
+  <script src="components/modalComponent/teacher/deleteTeacherModal.controller.js"></script>
+
+
+</body>
+</html>
