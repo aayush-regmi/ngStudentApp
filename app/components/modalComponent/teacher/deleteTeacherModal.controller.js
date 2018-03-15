@@ -18,7 +18,7 @@
 
             vm.ok= function(){
                 TeacherService.delete(Teacher.id);
-                $uibModalInstance.close(vm.teacherName);
+                $uibModalInstance.close({userName: vm.teacherName , actionType: 'Delete'}); // add {userName: vm.teacherName}
             }
 
             vm.cancel = function(){

@@ -6,10 +6,8 @@
     TeacherService.$inject = ['$http', '$q'];
 
     function TeacherService($http, $q) {
-
-        var uid = 1;
+        var uid;
         var teachers = [];
-        var message = '';
 
         var teacherService = {
             message:'',
@@ -27,10 +25,9 @@
                 method: 'GET',
                 url: 'https://jsonplaceholder.typicode.com/users'
             }).then(function (response) {
-                var results = response.data;
                 teachers = response.data;
                 uid = teachers.length;
-                deferred.resolve(results);
+                deferred.resolve(teachers);
             }, function (error) {
                 deferred.reject(error);
             });
@@ -59,11 +56,11 @@
 
         function saveMessage(newMessage) {
             teacherService.message = newMessage;
-            console.log(message);
+            //console.log(message);
         }
 
         function getMessage() {
-            console.log('Returned Message' + message);
+            //console.log('Returned Message' + message);
             return teacherService.message;
         }
 

@@ -6,21 +6,19 @@
     angular.module('MockApp')
         .directive('scrollToBookmark',scrollToBookmark);
 
-    scrollToBookmark.$inject = [];
+    scrollToBookmark.$inject = ['$window'];
 
-    function scrollToBookmark(){
+    function scrollToBookmark($window){
         var directive = {
             link: function(scope, elem, attrs) {
                 var value = attrs.scrollToBookmark;
-
-                console.log(value);
                 elem.bind('click',function() {
-                    //scope.$apply(function() {
+                    scope.$apply(function() {
                         var selector = "[scroll-bookmark='"+ value +"']";
                         var element = angular.element(selector);
                         if(element.length)
-                            window.scrollTo(0, element[0].offsetTop - 30);
-                    //});
+                            $window.scrollTo(0, element[0].offsetTop - 30); //will go -30 top
+                    });
                 });
             }
         }

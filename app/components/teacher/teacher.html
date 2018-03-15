@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-sm-12 col-lg-6">
             <!--<button type="button" class="btn btn-default" ng-click="teacherCtrl.open()">Add Teacher</button>-->
-            <teacher-modal modal-type="add" file-name="teacherModal" button-title="Add" button-class="btn btn-default"></teacher-modal>
+            <teacher-modal button-title="Add Teacher" file-name="TeacherModal" controller-as="teacherModalCtrl" button-class="btn btn-default"></teacher-modal>
         </div>
         <div class="col-sm-12 col-lg-6">
             <div class="form-group">
@@ -47,11 +47,10 @@
             <td>{{ $index + 1 }}</td>
             <td>{{ teacher.name }}</td>
             <td>{{ teacher.email }}</td>
-            <td><address model = "teacher.address"></address> </td>
+            <td><address value = "teacher.address"></address> </td>
             <td>
-                <teacher-modal modal-type="edit" file-name="teacherModal" button-title="DerecEdit" modal-value="teacher" button-class="" rabin=""></teacher-modal>|
-                <teacher-modal modal-type="delete" file-name="deleteTeacherModal" button-title="DerecDelete" modal-value="teacher" button-class=""></teacher-modal>
-                <a href="javascript:void(0)" ng-click="teacherCtrl.delete(teacher)">delete</a>
+                <teacher-modal button-title="Edit" file-name="TeacherModal" controller-as="teacherModalCtrl" modal-value="teacher" button-class=""></teacher-modal> |
+                <teacher-modal button-title="Delete" file-name="DeleteTeacherModal" controller-as="delTeacherModalCtrl" modal-value="teacher" button-class=""></teacher-modal>
             </td>
         </tr>
         <tr ng-show="(teacherCtrl.teachers | filter: search).length == 0">
