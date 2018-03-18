@@ -18,6 +18,7 @@
             var directive = {
                 restrict: 'EA',
                 scope:{
+                    'modalType':'@modalType',
                     'title': '@buttonTitle',
                     'class': '@buttonClass',
                     //'folderName':'@folderName',
@@ -25,7 +26,7 @@
                     'fileName': '@fileName',
                     modalValue: '=',
                 },
-                template:'<a type="button" class="{{class}}" ng-click="modalDCtrl.open(modalValue,fileName,ctrlAs)">{{title}}</a>',
+                template:'<a id="{{modalType}}" type="button" class="{{class}}" ng-click="modalDCtrl.open(modalValue,fileName,ctrlAs)">{{title}}</a>',
                 controller:'modalDirectiveController as modalDCtrl',
             }
             return directive;

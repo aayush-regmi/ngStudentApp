@@ -45,10 +45,10 @@
             </div>
     </div>
     <div class="modal-footer">
-        <button class="btn btn-primary" type="button" ng-show="teacherModalCtrl.modalTitle == 'Add Teacher'" ng-disabled="teacherForm.$invalid" ng-click="teacherModalCtrl.ok()">
+        <button id="confirmAdd" class="btn btn-primary" type="button" ng-show="teacherModalCtrl.modalTitle == 'Add Teacher'" ng-disabled="teacherForm.$invalid" ng-click="teacherModalCtrl.ok()">
             Save
         </button>
-        <button class="btn btn-primary" type="button" ng-show="teacherModalCtrl.modalTitle == 'Edit Teacher'" ng-disabled="teacherForm.$pristine" ng-click="teacherModalCtrl.ok()">
+        <button id="confirmEdit" class="btn btn-primary" type="button" ng-show="teacherModalCtrl.modalTitle == 'Edit Teacher'" ng-disabled="teacherForm.$pristine" ng-click="teacherModalCtrl.ok()">
             Edit
         </button>
         <button class="btn btn-warning" type="button" ng-click="teacherModalCtrl.cancel()">Cancel</button>
