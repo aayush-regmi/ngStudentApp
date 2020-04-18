@@ -1,0 +1,40 @@
+<form name="studentForm">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">{{studentModalCtrl.modalTitle}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+            <div class="form-group">
+                <label for="usr">First Name:*</label>
+                <input type="text" class="form-control" id="usr" name="fname" ng-model="studentModalCtrl.newstudent.fname" ng-pattern="/^[a-zA-Z ]*$/" required>
+                <div style="color:red" ng-show="studentForm.fname.$dirty && studentForm.fname.$invalid">
+                    <div ng-show="studentForm.fname.$invalid" ng-hide="studentForm.fname.$error.required">Firstname should only contain alphabets.</div>
+                  <div ng-show="studentForm.fname.$error.required">Firstname is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name:*</label>
+                <input type="text" class="form-control" id="lname" name="lname" ng-model="studentModalCtrl.newstudent.lname" ng-pattern="/^[a-zA-Z ]*$/" required>
+                <div style="color:red" ng-show="studentForm.lname.$dirty && studentForm.lname.$invalid">
+                    <div ng-show="studentForm.lname.$invalid" ng-hide="studentForm.lname.$error.required">Lastname should only contain alphabets.</div>
+                    <div ng-show="studentForm.lname.$error.required">Lastname is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" ng-model="studentModalCtrl.newstudent.email">
+                <div style="color:red" ng-show="studentForm.email.$dirty && studentForm.email.$invalid">
+                    <div ng-show="studentForm.email.$invalid">Email Format should be correct</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" ng-model="studentModalCtrl.newstudent.address">
+            </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-disabled="studentForm.$invalid" ng-click="studentModalCtrl.ok()">
+            Save
+        </button>
+        <button class="btn btn-warning" type="button" ng-click="studentModalCtrl.cancel()">Cancel</button>
+    </div>
+</form>
